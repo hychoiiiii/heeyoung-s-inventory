@@ -86,3 +86,34 @@ print(calcurator)
 # 오버라이딩: 부모 클래스 기능 재정의
 # 추상클래스: 자식 클래스에서 반듯이 구현해야 되는 기능을 가진 부모클래스. 자식클래스에서 다시 안써주면 끌어다 못씀. 에러남
 # super: 부모클래스. 상위로 올라가는 것임
+
+# 모듈과 패키지
+cooking.py
+module
+def makeJjajang():
+        print('makeJjajang')
+        
+def makeJjajang():
+        print('makeJjamppong')
+def makeJjajang():
+        print('makePasta')
+def makeJjajang():
+        print('makePizza')   
+
+temp.py
+module
+
+import cooking
+cooking.makeJjajang()
+cooking.makeJjamppong()
+cooking.makePasta()
+cooking.makePizza()
+
+13_1.py
+from cooking import makeJjajng
+from cooking import makeJjamppong
+
+form cooking import * = 모든 것을 가져오는 것
+
+makeJjajng()
+makeJjamppong()
