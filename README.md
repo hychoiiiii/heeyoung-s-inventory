@@ -1,3 +1,9 @@
+# 2강 파이썬의 역사
+
+python IDLE(코딩, 디버깅, 실행, 배포)
+- python shell: 연습용
+- python code-deitor: 저장, 개발용
+
 # 200525 월 파이썬 함수
 print(10+20)
 def addFun(x,y):
