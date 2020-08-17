@@ -29,3 +29,30 @@ actions.perform()
 second = driver.find_element_by_class_name('menu')
 actions = webdriver.ActionChains(driver).click(second)
 actions.perform()
+
+
+<body>
+div class="wrap searchP"
+div class="contleft"
+div class="pcAppendArea"
+div class="detachNodeWrap"
+div class="filterGroup ~"
+
+ul class="volume" id="voisList"
+li class="group"
+
+1. 복잡한 방법
+div_elem=driver.find_element_by_class_name("filterGroup bbNone detachNodeJournal")
+pre_elem=driver.find_element_by_class_name("group")
+
+2. xpath 이용방법
+sourcecode_elem=driver.find_element_by_xpath("//div[@calss='filterGroup bbNone detachNodeJournal']/pre[@class='group']/code")
+
+
+# 원하는 요소(element)를 찾습니다. 이 경우에는 검색창입니다.
+search_box = driver.find_element_by_id('headerSearchKeyword')
+# 다음과 같은 동작을 하는 액션 체인을 만들었습니다.
+# 검색창을 찾고 '아이스크림'이라는 검색어를 입력한 뒤 Enter를 입력합니다.
+actions = webdriver.ActionChains(driver).send_keys_to_element(search_box, '아이스크림').send_keys(Keys.ENTER)
+# 체인을 실행합니다.
+actions.perform()
