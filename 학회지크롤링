@@ -1,1 +1,31 @@
+import time
+import requests
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from bs4 import BeautifulSoup as bs
+
+path="C:\python\chromedriver.exe"
+driver=webdriver.Chrome(path)
+driver.get("https://lib.sookmyung.ac.kr/login")
+
+driver_id=driver.find_element_by_id("id")
+driver_id.send_keys("1614431")
+
+driver_pw=driver.find_element_by_id("password")
+driver_pw.send_keys("heeyoung96")
+
+login = driver.find_element_by_class_name("loginBtn")
+login.click()
+
+time.sleep(3)
+
+url_craw = "http://www.dbpia.co.kr.openlink.sookmyung.ac.kr:8080/journal/publicationDetail?publicationId=PLCT00006537"
+driver.get(url_craw)
+
+first = driver.find_element_by_id('voisList')
+actions = webdriver.ActionChains(driver).move_to_element(first)
+actions.perform()
+
+second = driver.find_element_by_class_name('menu')
+actions = webdriver.ActionChains(driver).click(second)
+actions.perform()
