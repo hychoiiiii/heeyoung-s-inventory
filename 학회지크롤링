@@ -56,3 +56,44 @@ search_box = driver.find_element_by_id('headerSearchKeyword')
 actions = webdriver.ActionChains(driver).send_keys_to_element(search_box, '아이스크림').send_keys(Keys.ENTER)
 # 체인을 실행합니다.
 actions.perform()
+
+# datetime- 기본날짜와 시간형
+# def @@함수를 만들어라
+
+import datetime
+
+start= 1988 변수1 만들기 (첫번째 논문 년도)
+now=datetime.datetime.now()  변수2 만들기 (현재 년도)
+
+def yearlist(): 함수1만들기
+    for yr in range(start, now.year): 변수3 만들기 = 변수1부터 변수2까지 
+        print(yr)  변수3 출력
+
+---------------------------------------------------------------------
+html = driver.page_source --> html 만들기
+soup = BeautifulSoup(html, 'html.parser') --> html 파일 열기
+sub = soup.find("ul", class_="volume") --> 찾아라 ul이라는 태그를 class는 volume 이다.
+
+for link in sub.find_all('a'): 변수1 list 만들기 'a' sub 모두 찾은 후 차례로 밑에 문장 수행
+    print(link.get('onclick')) 출력 변수1의 onclick부터 얻어와서 출력
+
+----------------------------------------------------------------------
+str_menu = str(menu) --> menu를 문자로 바꾸고 변수로 만들기
+
+list_menu = []
+
+for i in range(len(menu)): --> menu 문자 길이에서 반복
+    list_menu.append(str_menu[(57+133*i):(69+133*i)]) --> ??? 몰겠음
+
+list_menu2 = []
+
+for i in range(9):
+    list_menu2.append(str_menu[(10829+132*i):(10841+132*i)])
+    
+del list_menu[-9:]
+
+list_menu3 = list_menu + list_menu2
+
+url_jojik = "http://www.dbpia.co.kr.openlink.sookmyung.ac.kr:8080/journal/voisDetail?voisId="
+
+driver.get(url_jojik+list_menu3[0])
